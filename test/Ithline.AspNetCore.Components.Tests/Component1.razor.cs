@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
 
 namespace Ithline.AspNetCore.Components.Tests;
 
-[GeneratedRazorResult]
 public partial class ChildComponent : ParentComponent
 {
     [Parameter]
@@ -16,7 +16,7 @@ public partial class ChildComponent : ParentComponent
 
     public static void Run()
     {
-        var c = ChildComponent.CreateComponentResult(parentA: "a", parentB: "b", childA: 0, childB: 1);
+        TypedResults.Extensions.ChildComponent("abc", "def", 1, 2, childC: 3);
     }
 }
 
@@ -30,4 +30,11 @@ public abstract class ParentComponent : ComponentBase
 
     [Parameter]
     public string? ParentC { get; set; }
+}
+
+[GeneratedRazorResult<ChildComponent>]
+[GeneratedRazorResult<ParentComponent>]
+public static partial class ComponentExtensions
+{
+
 }

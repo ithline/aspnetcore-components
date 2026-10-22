@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Ithline.AspNetCore.Components;
@@ -5,11 +6,11 @@ namespace Ithline.AspNetCore.Components;
 /// <summary>
 /// Instructs the source generator to generate a <see cref="RazorComponentResult"/> factory method.
 /// </summary>
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-public sealed class GeneratedRazorResultAttribute : Attribute
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+public sealed class GeneratedRazorResultAttribute<T> : Attribute where T: IComponent
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="GeneratedRazorResultAttribute"/> class.
+    /// Initializes a new instance of the <see cref="GeneratedRazorResultAttribute{T}"/> class.
     /// </summary>
     public GeneratedRazorResultAttribute()
     {

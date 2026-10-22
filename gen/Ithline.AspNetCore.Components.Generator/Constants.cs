@@ -2,11 +2,12 @@ namespace Ithline.AspNetCore.Components;
 
 internal static class Constants
 {
-    public const string GeneratedRazorComponentAttribute = "Ithline.AspNetCore.Components.GeneratedRazorResultAttribute";
+    public const string GeneratedRazorComponentAttribute = "Ithline.AspNetCore.Components.GeneratedRazorResultAttribute`1";
 
     public const string RazorComponentResultOfT = "Microsoft.AspNetCore.Http.HttpResults.RazorComponentResult`1";
     public const string ParameterAttribute = "Microsoft.AspNetCore.Components.ParameterAttribute";
     public const string EditorRequiredAttribute = "Microsoft.AspNetCore.Components.EditorRequiredAttribute";
+    public const string IResultExtensions = "Microsoft.AspNetCore.Http.IResultExtensions";
 
     public const string Dictionary = "System.Collections.Generic.Dictionary`2";
     public const string IEnumerable = "System.Collections.IEnumerable";

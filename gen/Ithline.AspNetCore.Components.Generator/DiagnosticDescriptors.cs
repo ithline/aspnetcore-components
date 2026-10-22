@@ -14,10 +14,18 @@ internal static class DiagnosticDescriptors
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
 
-    public static DiagnosticDescriptor ClassMustBePartial { get; } = new DiagnosticDescriptor(
+    public static DiagnosticDescriptor RequiredTypesMissing { get; } = new DiagnosticDescriptor(
+        id: "ITH0002",
+        title: "Required types are not present.",
+        messageFormat: "Required types are not present.",
+        category: Category,
+        defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true);
+
+    public static DiagnosticDescriptor ClassMustBeStaticPartial { get; } = new DiagnosticDescriptor(
         id: "ITH0100",
-        title: "Class must be partial.",
-        messageFormat: "Class must be partial.",
+        title: "Class must be static and partial.",
+        messageFormat: "Class must be static and partial.",
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
@@ -30,26 +38,18 @@ internal static class DiagnosticDescriptors
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
 
-    public static DiagnosticDescriptor ClassCannotBeAbstract { get; } = new DiagnosticDescriptor(
+    public static DiagnosticDescriptor ClassMustHaveValidName { get; } = new DiagnosticDescriptor(
         id: "ITH0102",
-        title: "Class cannot be abstract.",
-        messageFormat: "Class cannot be abstract.",
+        title: "Class must have valid name.",
+        messageFormat: "Class must have valid name.",
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
 
-    public static DiagnosticDescriptor InvalidSignature { get; } = new DiagnosticDescriptor(
-        id: "ITH0300",
-        title: "Member or property has invalid signature.",
-        messageFormat: "Member or property has invalid signature.",
-        category: Category,
-        defaultSeverity: DiagnosticSeverity.Error,
-        isEnabledByDefault: true);
-
-    public static DiagnosticDescriptor InvalidRoutePattern { get; } = new DiagnosticDescriptor(
-        id: "ITH0301",
-        title: "Route pattern is not valid.",
-        messageFormat: "Route pattern is not valid.",
+    public static DiagnosticDescriptor TypeIsNotValidComponent { get; } = new DiagnosticDescriptor(
+        id: "ITH0104",
+        title: "Type is not valid for a component.",
+        messageFormat: "Type is not valid for a component.",
         category: Category,
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);

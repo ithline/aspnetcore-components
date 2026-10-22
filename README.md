@@ -1,5 +1,5 @@
 # Ithline.AspNetCore.Components
-Simple package to generate Blazor RazroComponentResult typed factory method using C# source generators.
+Simple package to generate Blazor RazorComponentResult typed factory methods using C# source generators.
 
 ## Installation
 
@@ -9,11 +9,28 @@ Add a [NuGet package](https://www.nuget.org/packages/Ithline.AspNetCore.Componen
 ## Usage example
 ```cs
 using Ithline.AspNetCore.Components;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
 
-[GeneratedRazorResult]
-partial class ComponentA
+// define a component
+class ComponentA : ComponentBase
 {
   [Parameter]
   public int Parameter1 { get; set; }
+}
+
+// add component factory method to a class
+[GeneratedRazorResult<ComponentA>]
+static partial class TypedResultExtensions
+{
+}
+
+// consume factory method
+class Consumer
+{
+  void Consume()
+  {
+    TypedResults.Extensions.ComponentA(10);
+  }
 }
 ```
